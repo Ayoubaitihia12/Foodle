@@ -16,7 +16,7 @@ const StoreItem = ({id,quantity}) => {
     const totalPrice = quantity*storeItems.price;
 
     return (
-        <div className='border-[1px] border-gray-500 rounded-lg flex justify-between items-center p-4'>
+        <div className='bg-gray-50 shadow-sm rounded-lg flex justify-between items-center p-4'>
            <div className='flex items-start gap-5'>
                 <img src={storeItems.imgSrc} alt={storeItems.name} className='w-[60px] object-cover mt-2' />
                 <div className='flex flex-col gap-2'>

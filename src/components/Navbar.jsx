@@ -2,7 +2,7 @@ import React , {useState} from 'react'
 import {HiOutlineShoppingBag} from 'react-icons/hi'
 import {VscAccount} from 'react-icons/vsc'
 import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import CartItems from './CartItems'
 import {useShoppingCart} from '../Context/ShoppingCart'
 
@@ -58,10 +58,12 @@ const Navbar = () => {
 
                     <ul className='hidden md:flex justify-between gap-10'>
                         {links.map(({id,link,to})=>(
-                            <li>
-                                <Link to={to} key={id} >    
+                            <li className='font-medium'>
+                                <NavLink 
+                                className={({ isActive }) => isActive ? 'text-red-600': 'hover:text-red-600 duration-300'} 
+                                to={to} key={id} >    
                                     {link}
-                                </Link>
+                                </NavLink>
                             </li>
                         ))}
                     </ul>
